@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Trang chủ</title>
+<title>Manager - Trang chủ</title>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -13,7 +13,7 @@
     }
 
     .container {
-        width: 400px;
+        width: 450px;
         margin: 100px auto;
         padding: 20px;
         background: #fff;
@@ -23,7 +23,7 @@
     }
 
     h2 {
-        color: #333;
+        color: #5bc0de;
         margin-bottom: 15px;
     }
 
@@ -51,7 +51,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Xin chào, ${sessionScope.account.fullName}!</h2>
+        <h2>Xin chào Manager${sessionScope.account.fullName}!</h2>
         <p><strong>Email:</strong> ${sessionScope.account.email}</p>
         <p><strong>Role ID:</strong> ${sessionScope.account.roleid}</p>
         <a href="logout">Đăng xuất</a>

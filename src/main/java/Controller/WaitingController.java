@@ -20,11 +20,11 @@ public class WaitingController extends HttpServlet {
 
             if (user.getRoleid() == 1) {
                 // Admin
-                req.getRequestDispatcher("/WEB-INF/views/admin/home.jsp")
+                req.getRequestDispatcher("/WEB-INF/views/admin/admin.jsp")
                    .forward(req, resp);
             } else if (user.getRoleid() == 2) {
                 // Manager
-                req.getRequestDispatcher("/WEB-INF/views/manager/home.jsp")
+                req.getRequestDispatcher("/WEB-INF/views/manager/manager.jsp")
                    .forward(req, resp);
             } else {
                 // User thường
