@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,10 +80,7 @@
 
             <!-- Hiển thị thông báo -->
             <c:if test="${not empty alert}">
-                <div class="alert">${alert}</div>
-            </c:if>
-            <c:if test="${not empty success}">
-                <div class="success">${success}</div>
+                <div class="${type == 'success' ? 'success' : 'alert'}">${alert}</div>
             </c:if>
 
             <label for="email">Email:</label>

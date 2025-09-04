@@ -1,10 +1,12 @@
 package Controller;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
 import java.io.IOException;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import model.User;
 import service.UserService;
 import service.UserServiceImpl;
@@ -26,9 +28,17 @@ public class RegisterController extends HttpServlet {
         // Lấy dữ liệu từ form
         String username = req.getParameter("username");
         String password = req.getParameter("password");
+        String confirmPassword = req.getParameter("confirmPassword");
         String email    = req.getParameter("email");
         String fullname = req.getParameter("fullname");  
         String roleStr  = req.getParameter("roleid");    
+
+        // Kiểm tra xác nhận mật khẩu
+        if (!password.equals(confirmPassword)) {
+            req.setAttribute("alert", "Mật khẩu xác nhận không khớp!");
+            req.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(req, resp);
+            return;
+        }
 
         int roleid = 3; // mặc định user thường
         if (roleStr != null && !roleStr.isEmpty()) {

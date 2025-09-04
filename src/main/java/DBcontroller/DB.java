@@ -1,9 +1,9 @@
 package DBcontroller;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.ResultSet;
 
 public class DB  {
 
@@ -13,7 +13,7 @@ public class DB  {
 
     public static Connection getConnection() throws SQLException {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver"); // load MySQL driver
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -46,4 +46,3 @@ public class DB  {
         }
     }
 }
-

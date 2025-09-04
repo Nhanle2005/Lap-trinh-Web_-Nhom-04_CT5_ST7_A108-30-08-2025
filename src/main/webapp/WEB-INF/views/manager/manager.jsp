@@ -51,7 +51,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Xin chào Manager${sessionScope.account.fullName}!</h2>
+        <h2>Xin chào Manager, ${sessionScope.account.fullName}!</h2>
         <p><strong>Email:</strong> ${sessionScope.account.email}</p>
         <p><strong>Role ID:</strong> ${sessionScope.account.roleid}</p>
         <a href="logout">Đăng xuất</a>

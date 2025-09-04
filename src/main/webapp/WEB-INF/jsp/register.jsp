@@ -19,6 +19,9 @@
         <c:if test="${alert != null}">
             <div class="alert alert-danger">${alert}</div>
         </c:if>
+        <c:if test="${error != null}">
+            <div class="alert alert-danger">${error}</div>
+        </c:if>
 
         <!-- Họ và tên -->
         <div class="mb-3">
